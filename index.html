@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>"My Own Calculator"</title>
+        <style>
+            .full-width{
+                width: 80%;
+            } 
+        </style>
+    </head>
+    <body>
+        <div class="container mt-5 text-center shadow bg-dark">
+            <div class="row  btn btn-dark full-width">
+                <div class="col my-3">
+                    <h2 class="bg-dark">
+                        CALCULATOR
+                    </h2>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <textarea class="full-width bg-dark p-5 text-left" readonly id="history" rows="4"></textarea>
+                        <div class="row pt-3 pb-3">
+                            <div class="col">
+                        <input type="text" class="full-width bg-dark" id="result"/>
+                    </div>
+                </div>
+                <div class="container">                    
+                    <div class="row">
+                      <div class="col-4">
+                        <div class="row pb-3">
+                            <div class="col">
+                                    <input type="button" value="9" class="fa-solid fa-circle-9 full-width bg-secondary shadow" style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('9')"/>
+                            </div>
+                        </div>
+                            <div class="row pb-3">
+                                <div class="col">
+                                        <input type="button" value="8" class="fa-solid fa-circle-8 full-width bg-secondary shadow" style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('8')"/>
+                                </div>
+                            </div>
+                        <div class="row pb-3">
+                            <div class="col">
+                                    <input type="button" value="6" class="fa-solid fa-circle-6 full-width bg-secondary shadow" style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('6')"/>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col">
+                                    <input type="button" value="4" class="fa-solid fa-circle-4 full-width bg-secondary shadow"style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('4')"/>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col">
+                                    <input type="button" value="1" class="fa-solid fa-circle-1 full-width bg-secondary shadow"style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('1')"/>
+                            </div>
+                        </div>
+                        
+                        <div class="row pb-3">
+                            <div class="col">
+                                    <input type="button" value="0" class="fa-solid fa-circle-0 full-width bg-secondary shadow"style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('0')"/>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="row pb-3">
+                            <div class="col">
+                                <input type="button" value="%" class="full-width bg-secondary shadow"style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('%')"/>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col">
+                                    <input type="button" value="7" class="fa-solid fa-circle-7 full-width bg-secondary shadow"style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('7')"/>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col">
+                                    <input type="button" value="5" class="fa-solid fa-circle-5 full-width bg-secondary shadow"style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('5')"/>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col">
+                                    <input type="button" value="3" class="fa-solid fa-circle-3 full-width bg-secondary shadow"style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('3')"/>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col">
+                                    <input type="button" value="2" class="fa-solid fa-circle-2 full-width bg-secondary shadow"style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('2')"/>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col">
+                                    <input type="button" value="." class="fa-solid fa-circle-. full-width bg-secondary shadow"style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('.')"/>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="row pb-3">
+                            <div class="col">
+                                <input type="button" value="C" class="full-width bg-secondary shadow" style="border-radius: 50%;width: 55px;height: 55px;" onclick="clr('C')"/>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col">
+                                <input type="button" value="/" class="full-width bg-secondary shadow"style="border-radius: 50%;width: 55px;height: 55px;" onclick="clr('/')"/>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col">
+                                <input type="button" value="*" class="full-width bg-secondary shadow" style="border-radius: 50%;width: 55px;height: 55px;" onclick= "dis('*')"/>
+                            </div>
+                        </div>
+                        <div class="row pb-3">
+                            <div class="col">
+                                  <input type="button" value="+" class="full-width bg-secondary shadow" style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('+')"/>
+                              </div>
+                      </div>
+                      <div class="row pb-3">
+                          <div class="col">
+                              <input type="button" value="-" class="full-width bg-secondary shadow" style="border-radius: 50%;width: 55px;height: 55px;" onclick="dis('-')"/>
+                          </div>
+                        </div> 
+                        <div class="row pb-3">
+                            <div class="col">
+                                    <input type="button" value="=" class="fa-solid fa-circle-= full-width bg-secondary shadow" style="border-radius: 50%;width: 55px;height: 55px;"onclick="solve('=')"/>
+                            </div>
+                        </div>
+                      </div>
+                   </div>
+                 </div>
+              </div>
+           </div>
+       </div>
+           <script>
+           function clr() {
+            document.getElementById('result').value="";
+           }
+           function dis(value){
+            document.getElementById('result').value += value;
+           }
+           function solve(){
+            var textareaElement = document.getElementById ('history');
+            var x = document.getElementById ('result') .value;
+            var y = eval(x);
+            clr();
+            textareaElement.value = textareaElement.value + x + '=' + y + '\n';
+           }
+           </script>
+    </body>
+</html>
